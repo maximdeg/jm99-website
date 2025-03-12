@@ -95,10 +95,9 @@ export default function Home() {
                 className="block text-[#350D70] py-2 font-bold mb-2"
                 htmlFor="emailaddress"
               ></label>
-              <input
+              <textarea
                 className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
                 id="emailaddress"
-                type="text"
                 placeholder="Consulta"
               />
             </div>
@@ -117,7 +116,7 @@ export default function Home() {
         {/* <!--Right Col--> */}
         <div className="w-full xl:w-3/5 p-12 overflow-hidden">
           <Image
-            src="https://res.cloudinary.com/djdnlogf1/image/upload/v1741798714/08692dad-624b-415b-bf56-a653368cb5e6_vbtfxr.jpg"
+            src="https://res.cloudinary.com/djdnlogf1/image/upload/v1741820261/Gemini_Generated_Image_ob4d3tob4d3tob4d2_o1k5sz.png"
             className="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6 bg-none"
             alt="computer"
             width={1000}
