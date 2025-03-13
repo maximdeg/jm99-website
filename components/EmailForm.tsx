@@ -3,7 +3,7 @@ import React from "react";
 import useForm from "@/utils/hooks/useForm";
 
 const EmailForm = () => {
-  const formFields: {} = {
+  const formFields = {
     name: "",
     email: "",
     message: "",
@@ -83,7 +83,7 @@ const EmailForm = () => {
 
         <div className="flex items-center justify-between pt-4">
           <button
-            className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out !self-end"
+            className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out cursor-pointer"
             type="submit"
           >
             Enviar

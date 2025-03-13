@@ -2,8 +2,6 @@ import EmailForm from "@/components/EmailForm";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroMain from "@/components/HeroMain";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
