@@ -1,21 +1,28 @@
-import transporter from "../config/transporter.config.js";
-import ENV from "@/config/environment.config.js";
-import companyEmailHTML from "./emailTemplates/companyEmailHTML.js";
-import thankYouHTML from "./emailTemplates/thankYouHTML.js";
+import nodemailer from "nodemailer";
+import companyEmailHTML from "@/utils/emailTemplates/companyEmailHTML.js";
+import thankYouHTML from "@/utils/emailTemplates/thankYouHTML.js";
+import dotenv from "dotenv";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  secure: false,
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS,
+  },
+});
 
 class Email {
+  private from: string;
   constructor(
-    private to: string,
-    private userEmail: string,
-    private url: string,
     private firstName: string,
-    private from: string
+    private to: string,
+    private message: string
   ) {
-    this.to = to;
-    this.userEmail = userEmail;
-    this.url = url;
     this.firstName = firstName;
-    this.from = ENV.GMAIL_USER as string;
+    this.to = to;
+    this.message = message;
+    this.from = process.env.GMAIL_USER as string;
   }
 
   async sendEmailToClient() {
@@ -23,7 +30,7 @@ class Email {
       const options = {
         to: this.to,
         subject: `Hola gracias por contactar JM99 Computer Requirements`,
-        html: thankYouHTML(this.url, this.firstName),
+        html: thankYouHTML(this.firstName),
         from: this.from,
       };
 
@@ -39,8 +46,8 @@ class Email {
     try {
       const options = {
         to: this.from,
-        subject: `Pagina web: ${this.userEmail}`,
-        html: companyEmailHTML(this.url, this.firstName),
+        subject: `Pagina web: ${this.firstName} mando un mensaje`,
+        html: companyEmailHTML(this.firstName, this.to, this.message),
         from: this.from,
       };
 

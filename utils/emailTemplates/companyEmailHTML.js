@@ -1,16 +1,13 @@
-const companyEmailHTML = (userName, email, body) => {
+const companyEmailHTML = (userName, email, message) => {
   return `
     <html>
         <body>
             <div>
-                <p>Hola JM99,</p>
-                <p>Aca esta el email de ${userName} con la direccion de contacto</p>
-                <p>${email}</p>
-                <p>${body}</p>
+                <h2>${userName} mando un mensaje desde la pagina web</h2>
+                <h3>Email: ${email}</h3>
+                <h3>Mensaje: ${message}</h3>
             </div>
-            <div>
-                <a href="${url}">Ir a JM99</a>
-            </div>
+
         </body>
     </html>
     `;
