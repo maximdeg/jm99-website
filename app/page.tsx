@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="h-full ">
+    <section className="h-full ">
       {/* <!--Nav--> */}
-      <div className="w-full container mx-auto">
+      <header className="w-full container mx-auto">
         <div className="w-full flex items-center justify-between">
           <Link
             className="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
@@ -58,26 +58,41 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* <!--Main--> */}
-      <div className="container pt-6 md:pt-10 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-        {/* <!--Left Col--> */}
-        <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
-          <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
-            Venta y reparacion de{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500  via-pink-500 to-blue-600">
-              computadoras
-            </span>{" "}
-            y mucho mas!
-          </h1>
-          <p className="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
-            Te garantizamos productos de calidad y compatibilidad para que
-            puedas trabajar y jugar sin problemas con tus dispositivos de
-            cualquier marca.
-          </p>
+      <section className="container pt-6 md:pt-10 mx-auto items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full justify-between lg:items-start overflow-y-hidden max-w-7xl md:mt-10 md:gap-30">
+          <div>
+            <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
+              Venta y reparacion de{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500  via-pink-500 to-blue-600">
+                computadoras
+              </span>{" "}
+              y mucho mas!
+            </h1>
+            <p className="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
+              Te garantizamos productos de calidad y compatibilidad para que
+              puedas trabajar y jugar sin problemas con tus dispositivos de
+              cualquier marca.
+            </p>
+          </div>
 
-          <form className="bg-gray-300 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
+          {/* <!--Left Col--> */}
+          <div className="w-full md:mx-20 md:mb-32 ">
+            <Image
+              src="https://res.cloudinary.com/djdnlogf1/image/upload/v1741820261/Gemini_Generated_Image_ob4d3tob4d3tob4d2_o1k5sz.png"
+              className="w-full md:w-10/12 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6"
+              alt="laptop"
+              width={800}
+              height={700}
+            />
+          </div>
+        </div>
+
+        {/* <!--FORM--> */}
+        <div className="w-full overflow-hidden flex justify-center align-center mt-32">
+          <form className="bg-gray-300 opacity-75 w-full md:w-3/5 py-6 shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
               <label
                 className="block text-[#350D70] py-2 font-bold mb-2"
@@ -107,25 +122,14 @@ export default function Home() {
                 className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out !self-end"
                 type="button"
               >
-                Send
+                Enviar
               </button>
             </div>
           </form>
         </div>
 
-        {/* <!--Right Col--> */}
-        <div className="w-full xl:w-3/5 p-12 overflow-hidden">
-          <Image
-            src="https://res.cloudinary.com/djdnlogf1/image/upload/v1741820261/Gemini_Generated_Image_ob4d3tob4d3tob4d2_o1k5sz.png"
-            className="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6 bg-none"
-            alt="computer"
-            width={1000}
-            height={1000}
-          />
-        </div>
-
         {/* <!--Footer--> */}
-        <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+        <footer className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
           <Link className="text-white no-underline hover:no-underline" href="#">
             &copy; App 2025
           </Link>
@@ -137,8 +141,8 @@ export default function Home() {
             {" "}
             JM99
           </Link>
-        </div>
-      </div>
-    </div>
+        </footer>
+      </section>
+    </section>
   );
 }
