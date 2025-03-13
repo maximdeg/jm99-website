@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JM99 Computer Requirements",
-  description: "Venta y reparacion de computadoras. Te garantizamos productos de calidad y compatibilidad para que puedas trabaja y jugar sin problemas con tus dispositivos de cualquier marca.",
+  title: "JM99 | Computer Requirements",
+  description:
+    "Venta y reparacion de computadoras. Te garantizamos productos de calidad y compatibilidad para que puedas trabaja y jugar sin problemas con tus dispositivos de cualquier marca.",
 };
 
 export default function RootLayout({
