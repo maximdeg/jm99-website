@@ -12,6 +12,7 @@ const EmailForm = () => {
   const { handleChangeInputValue, formValuesState } = useForm(formFields);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const form = e.target as HTMLFormElement;
     const data = new FormData(form);
 
@@ -33,8 +34,6 @@ const EmailForm = () => {
     } catch (error) {
       console.log(error);
     }
-
-    e.preventDefault();
   };
 
   return (
