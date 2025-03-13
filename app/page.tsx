@@ -73,8 +73,8 @@ export default function Home() {
             </h1>
             <p className="leading-normal text-base md:text-2xl mb-8 text-center md:text-pretty md:text-left ">
               Te garantizamos productos de calidad y compatibilidad para que
-              puedas trabajar y jugar sin problemas con tus dispositivos de
-              cualquier marca.
+              puedas trabajar sin problemas con tus dispositivos de cualquier
+              marca.
             </p>
           </div>
 
@@ -129,11 +129,11 @@ export default function Home() {
         </div>
 
         {/* <!--Footer--> */}
-        <footer className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+        <footer className="w-full pt-16 pb-6 text-sm text-center fade-in">
           <Link className="text-white no-underline hover:no-underline" href="#">
             &copy; App 2025
           </Link>
-          - @Copyright{" "}
+          @Copyright{" "}
           <Link
             className="text-white no-underline hover:no-underline"
             href="https://www.linkedin.com/in/maxim-degtiarev"
