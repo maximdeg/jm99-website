@@ -1,51 +1,71 @@
 "use client";
+
 import React from "react";
-import useForm from "@/utils/hooks/useForm";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { Loader2 } from "lucide-react";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { Button } from "@/components/ui/button";
+
+const formSchema = z.object({
+  name: z.string().min(3, "El nombre debe tener al menos 3 caracteres.*"),
+  email: z.string().email("Por favor ingrese un correo electronico valido.*"),
+  bodyMessage: z
+    .string()
+    .nonempty("Por favor complete el mensaje para resolver su consulta.*"),
+});
 
 const EmailForm = () => {
-  const formFields = {
-    name: "",
-    email: "",
-    message: "",
-  };
+  const [isLoading, setIsLoading] = React.useState(false);
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      bodyMessage: "",
+    },
+  });
 
-  const { handleChangeInputValue, formValuesState } = useForm(formFields);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
-
-    console.log(data.get("message"));
-    console.log(formValuesState);
+  const handleSubmitForm = async (values: z.infer<typeof formSchema>) => {
+    setIsLoading(true);
 
     try {
       const response: Response = await fetch("/api/send-email", {
         method: "POST",
         body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          message: data.get("message"),
+          name: values.name,
+          email: values.email,
+          message: values.bodyMessage,
         }),
       });
 
       const resData = response.json();
       console.log(resData);
+
+      setIsLoading(false);
+      alert("Mensaje enviado con exito");
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="w-full overflow-hidden flex justify-center align-center mt-32">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(handleSubmitForm)}
         className="bg-gray-300 opacity-75 w-full md:w-3/5 py-6 shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4"
       >
         <div className="mb-4">
           <label
             className="block text-[#350D70] py-2 font-bold mb-2"
-            htmlFor="emailaddress"
+            htmlFor="name"
           >
             Escribinos por cualquier consulta que tengas
           </label>
@@ -53,10 +73,10 @@ const EmailForm = () => {
             className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
             id="name"
             type="name"
-            name="name"
             placeholder="Nombre"
-            onChange={handleChangeInputValue}
+            {...register("name")}
           />
+          {errors.name?.message && <span>{errors.name?.message}</span>}
           <label
             className="block text-[#350D70] py-2 font-bold mb-2"
             htmlFor="name"
@@ -65,29 +85,42 @@ const EmailForm = () => {
             className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
             id="email"
             type="email"
-            name="email"
+            {...register("email")}
             placeholder="tuemail@email.com"
-            onChange={handleChangeInputValue}
           />
+          {errors.email?.message && <span>{errors.email?.message}</span>}
           <label
             className="block text-[#350D70] py-2 font-bold mb-2"
             htmlFor="email"
           ></label>
           <textarea
             className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-            id="message"
+            id="bodyMessage"
             placeholder="Consulta"
-            name="message"
+            {...register("bodyMessage")}
           />
+          {errors.bodyMessage?.message && (
+            <span>{errors.bodyMessage?.message}</span>
+          )}
         </div>
 
-        <div className="flex items-center justify-between pt-4">
-          <button
-            className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out cursor-pointer"
-            type="submit"
-          >
-            Enviar
-          </button>
+        <div className="flex items-center justify-between pt-4 !place-self-end !self-end">
+          {isLoading ? (
+            <Button
+              disabled
+              className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out cursor-pointer"
+            >
+              <Loader2 className="animate-spin" />
+              Enviando
+            </Button>
+          ) : (
+            <button
+              className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out cursor-pointer"
+              type="submit"
+            >
+              Enviar
+            </button>
+          )}
         </div>
       </form>
     </div>
