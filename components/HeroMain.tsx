@@ -13,7 +13,7 @@ const HeroMain = () => {
             </span>{" "}
             y m&aacute;s!
           </h1>
-          <p className="leading-normal text-base md:text-2xl mb-8 text-center md:text-pretty md:text-left ">
+          <p className="leading-normal text-white text-base md:text-2xl mb-8 text-center md:text-pretty md:text-left ">
             Te garantizamos productos de calidad y compatibilidad para que
             puedas trabajar sin problemas con tus dispositivos de cualquier
             marca.
