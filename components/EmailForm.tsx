@@ -57,7 +57,10 @@ const EmailForm = () => {
   };
 
   return (
-    <div className="w-full overflow-hidden flex justify-center align-center mt-32">
+    <div
+      id="contact"
+      className="w-full overflow-hidden flex justify-center align-center mt-32"
+    >
       <form
         onSubmit={handleSubmit(handleSubmitForm)}
         className="bg-gray-300 opacity-75 w-full md:w-3/5 py-6 shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4"

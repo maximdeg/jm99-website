@@ -1,11 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/NavigationMenu";
 
 const Header = () => {
   return (
-    <header className="w-full container mx-auto z-10">
-      <div className="w-full flex items-center justify-between">
+    <header className="w-full z-10 sticky top-[-20px] md:top-[-35px] h-27 md:h-35">
+      <div className="w-full flex items-center justify-between px-5">
         <Link
           className="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
           href="#"
@@ -15,10 +28,67 @@ const Header = () => {
             alt="JM99-logo"
             width={150}
             height={150}
+            className="w-30"
           ></Image>
         </Link>
 
-        <div className="flex w-1/2 justify-end content-center">
+        <div className="block md:hidden">
+          <Popover>
+            <PopoverTrigger>
+              <button className="p-2 rounded-md bg-[#350D70] hover:bg-gray-200">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <NavigationMenu data-orientation="vertical">
+                <NavigationMenuList data-orientation="vertical">
+                  <NavigationMenuItem>
+                    <Link href="#hero" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Inicio
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="#services" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Servicios
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="#contact" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Contacto
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </PopoverContent>
+          </Popover>
+        </div>
+
+        <div className="w-1/8 justify-end content-center hidden md:flex">
           <Link
             className="inline-block text-[#350D70] no-underline hover:text-pink-500 hover:text-underline text-center md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
             href="https://www.tiktok.com/@jm99computers"

@@ -36,7 +36,10 @@ const Services = () => {
   ];
 
   return (
-    <section className="container mx-auto items-center my-10 md:my-16 py-28 md:py-36">
+    <section
+      id="services"
+      className="container mx-auto items-center my-10 md:my-16 py-28 md:py-36"
+    >
       <div>
         <h1 className="text-5xl text-white">Servicios</h1>
       </div>

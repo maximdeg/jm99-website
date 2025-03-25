@@ -4,7 +4,10 @@ import React from "react";
 const HeroMain = () => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full justify-between lg:items-start overflow-y-hidden max-w-7xl md:mt-10 md:gap-30">
+      <div
+        id="hero"
+        className="grid grid-cols-1 md:grid-cols-2 w-full justify-between lg:items-start overflow-y-hidden max-w-7xl md:mt-10 md:gap-30"
+      >
         <div>
           <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left text-pretty">
             Venta y reparaci&oacute;n de{" "}

@@ -1,5 +1,6 @@
 import React from "react";
 import { CldImage } from "next-cloudinary";
+import "@/app/main.module.css";
 
 const ServiceCard = ({
   title,
@@ -15,6 +16,7 @@ const ServiceCard = ({
       <div>
         <CldImage
           src={image}
+          className="computer"
           width="500"
           height="500"
           crop={{
