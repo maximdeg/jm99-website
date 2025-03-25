@@ -3,8 +3,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-16 pb-6 text-sm text-center fade-in">
-      <div className="flex w-1/8 justify-end content-center">
+    <footer className="flex flex-col w-full pt-16 pb-6 text-sm text-center fade-in gap-15">
+      <div className="flex justify-center content-center">
         <Link
           className="inline-block text-[#350D70] no-underline hover:text-pink-500 hover:text-underline text-center md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
           href="https://www.tiktok.com/@jm99computers"
@@ -42,17 +42,19 @@ const Footer = () => {
           </svg>
         </Link>
       </div>
-      <Link className="text-white no-underline hover:no-underline" href="#">
-        &copy; App 2025
-      </Link>
-      @Copyright{" "}
-      <Link
-        className="text-white no-underline hover:no-underline"
-        href="https://www.linkedin.com/in/maxim-degtiarev"
-      >
-        {" "}
-        JM99
-      </Link>
+      <div>
+        <Link className="text-white no-underline hover:no-underline" href="#">
+          &copy; App 2025
+        </Link>
+        @Copyright{" "}
+        <Link
+          className="text-white no-underline hover:no-underline"
+          href="https://www.linkedin.com/in/maxim-degtiarev"
+        >
+          {" "}
+          JM99
+        </Link>
+      </div>
     </footer>
   );
 };

@@ -12,7 +12,7 @@ const ServiceCard = ({
   image: string;
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center text-white">
+    <div className="flex flex-col items-center justify-center text-white service-animation service-card">
       <div>
         <CldImage
           src={image}
@@ -20,17 +20,17 @@ const ServiceCard = ({
           width="500"
           height="500"
           crop={{
-            type: "auto",
+            type: "fit",
             source: true,
           }}
           alt="image"
         />
       </div>
       <div className="text-center">
-        <h3>{title}</h3>
+        <h3 className="text-3xl mb-2">{title.toLocaleUpperCase()}</h3>
       </div>
       <div>
-        <p>{description}</p>
+        <p className="text-center text-lg text-balance">{description}</p>
       </div>
     </div>
   );

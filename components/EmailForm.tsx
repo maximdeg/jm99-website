@@ -59,7 +59,7 @@ const EmailForm = () => {
   return (
     <div
       id="contact"
-      className="w-full overflow-hidden flex justify-center align-center mt-32"
+      className="w-full overflow-hidden flex justify-center align-center mt-32 px-5 md:px-10"
     >
       <form
         onSubmit={handleSubmit(handleSubmitForm)}

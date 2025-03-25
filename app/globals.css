@@ -123,9 +123,18 @@
     }
   }
 
-  @keyframes shadow-in {
+  @keyframes white-in {
     to {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  @keyframes swing-pic {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.5);
     }
   }
 
@@ -136,7 +145,29 @@
   }
 
   header {
-    animation-name: shadow-in;
+    animation-name: white-in;
+  }
+}
+
+@layer demo {
+  @keyframes scale-a-lil {
+    from {
+      scale: 0.5;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .service-animation {
+      animation: scale-a-lil linear both;
+      animation-timeline: view();
+      animation-range: 10vh 75vh;
+    }
+  }
+}
+
+@layer demo.support {
+  .service-animation {
+    max-inline-size: 100%;
   }
 }
 
