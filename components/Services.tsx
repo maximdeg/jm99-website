@@ -16,7 +16,7 @@ const Services = () => {
       description:
         "Mejoramos el rendimiento de tu equipo actualizando componentes como memoria RAM, disco duro (a unidades SSD más rápidas), tarjeta gráfica y otros, para que puedas trabajar o jugar sin problemas.",
       image:
-        "https://res.cloudinary.com/djdnlogf1/image/upload/v1742931803/sv311dc8c5082d5406b49fc32cab2e353dc_fpm7us.png",
+        "https://res.cloudinary.com/djdnlogf1/image/upload/v1743016663/e7ac78917c86b878445b85e1dfe117a1_cj9bko.png",
     },
     // {
     //   title: "Recuperación de Datos",
@@ -44,11 +44,11 @@ const Services = () => {
     //   image: "networking.jpg",
     // },
     {
-      title: "Instalación de Software",
+      title: "Instalación de Programas y Aplicaciones",
       description:
         "Te ayudamos a instalar y configurar programas y aplicaciones en tu computadora, asegurándonos de que funcionen correctamente y sean compatibles con tu sistema operativo.",
       image:
-        "https://res.cloudinary.com/djdnlogf1/image/upload/v1742931801/01of63aebe5e9ebd65b6f05bd116c0017e9_qljsyq.png",
+        "https://res.cloudinary.com/djdnlogf1/image/upload/v1743017384/4cf7ea7a6fd93d39290027b11b28db66_iqpkob.png",
     },
     // {
     //   title: "Instalación de Windows",
@@ -67,7 +67,7 @@ const Services = () => {
       description:
         "Diagnosticamos y reparamos fallas en componentes físicos de tu computadora, como pantallas rotas, problemas de carga, teclados defectuosos y más.",
       image:
-        "https://res.cloudinary.com/djdnlogf1/image/upload/v1742931804/528979d92ed9fb5c97b1f52f990f3d38_s5kdzh.png",
+        "https://res.cloudinary.com/djdnlogf1/image/upload/v1743017739/7d4d16b798551be72cc25b74bb57b183_xgeumd.png",
     },
     // {
     //   title: "Reparación de Software",

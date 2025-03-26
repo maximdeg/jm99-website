@@ -17,11 +17,14 @@ import {
 
 const Header = () => {
   return (
-    <header className="w-full z-10 sticky top-[-20px] md:top-[-35px] h-27 md:h-35">
+    <header
+      className="w-full z-10 sticky top-[-20px] md:top-[-35px] md:pt-5 h-27 md:h-35 md:px-[calc(8%+1.5rem)] "
+      id="header"
+    >
       <div className="w-full flex items-center justify-between px-5">
         <Link
-          className="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-          href="#"
+          className="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl "
+          href="#header"
         >
           <Image
             src="https://res.cloudinary.com/djdnlogf1/image/upload/v1741792376/logo_leo_jm-01_peoycz.png"
@@ -56,7 +59,7 @@ const Header = () => {
               <NavigationMenu data-orientation="vertical">
                 <NavigationMenuList data-orientation="vertical">
                   <NavigationMenuItem>
-                    <Link href="#hero" legacyBehavior passHref>
+                    <Link href="#header" legacyBehavior passHref>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
@@ -89,6 +92,31 @@ const Header = () => {
         </div>
 
         <div className="w-1/8 justify-end content-center hidden md:flex">
+          <NavigationMenu data-orientation="vertical">
+            <NavigationMenuList data-orientation="vertical">
+              <NavigationMenuItem>
+                <Link href="#header" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Inicio
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="#services" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Servicios
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="#contact" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Contacto
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <Link
             className="inline-block text-[#350D70] no-underline hover:text-pink-500 hover:text-underline text-center md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
             href="https://www.tiktok.com/@jm99computers"

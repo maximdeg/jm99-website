@@ -45,7 +45,7 @@ const Footer = () => {
       <div>
         <Link className="text-white no-underline hover:no-underline" href="#">
           &copy; App 2025
-        </Link>
+        </Link>{" "}
         @Copyright{" "}
         <Link
           className="text-white no-underline hover:no-underline"

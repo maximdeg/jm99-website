@@ -113,6 +113,33 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
+@supports (animation-timeline: scroll()) {
+  @keyframes slide-out-right {
+    to {
+      translate: 0% 50%;
+      opacity: 0;
+      scale: 0.25;
+      rotate: -25deg;
+    }
+  }
+
+  .hero-computer-scroll {
+    animation: slide-out-right auto linear both;
+    animation-timeline: scroll();
+    animation-range: 0% 750px;
+  }
+}
+.image-hover {
+  transition: transform 0.5s ease-in-out;
+}
+.image-hover:hover {
+  transform: translate(-20px, -40px) rotate(-15deg) scale(1.4);
+}
+
 @supports (animation-timeline: view()) {
   @keyframes fade-in {
     from {
