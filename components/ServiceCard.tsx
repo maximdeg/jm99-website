@@ -12,8 +12,8 @@ const ServiceCard = ({
   image: string;
 }) => {
   return (
-    <div className="grid grid-cols-1 grid-rows-2 text-white service-animation service-card  ">
-      <div className="max-w-[300px] md:max-w-[250px]  justify-self-center self-center border border-white rounded-full">
+    <div className="grid grid-cols-1 grid-rows-2 text-white service-animation service-card">
+      <div className="max-w-[300px] md:max-w-[250px]  justify-self-center self-center">
         <CldImage
           src={image}
           className="image-hover "
