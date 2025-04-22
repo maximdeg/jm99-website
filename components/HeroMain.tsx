@@ -24,7 +24,7 @@ const HeroMain = () => {
         </div>
 
         {/* <!--Left Col--> */}
-        <div className="md:absolute md:top-60 md:right-0 md:w-[50%] lg:top-50 xl:top-30 2xl:top-20 2xl:right-[5%] max-w-2xl overflow-hidden md:mb-32 z-1 hero-computer-scroll">
+        <div className="md:absolute md:top-60 md:right-0 md:w-[50%] lg:top-50 xl:top-30 2xl:top-20 2xl:right-[5%] max-w-2xl 2xl:max-w-3xl overflow-hidden md:mb-32 z-1 hero-computer-scroll">
           <Image
             src="https://res.cloudinary.com/djdnlogf1/image/upload/v1741820261/Gemini_Generated_Image_ob4d3tob4d3tob4d2_o1k5sz.png"
             className="w-full md:w-10/12 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6 "
