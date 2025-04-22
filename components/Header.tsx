@@ -6,6 +6,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Button } from "./ui/button";
 
 import {
   NavigationMenu,
@@ -38,7 +39,7 @@ const Header = () => {
         <div className="block md:hidden">
           <Popover>
             <PopoverTrigger>
-              <button className="p-2 rounded-md bg-[#350D70] hover:bg-gray-200">
+              <Button className="p-2 rounded-md bg-[#350D70] hover:bg-gray-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 text-white"
@@ -53,7 +54,7 @@ const Header = () => {
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
-              </button>
+              </Button>
             </PopoverTrigger>
             <PopoverContent>
               <NavigationMenu data-orientation="vertical">
