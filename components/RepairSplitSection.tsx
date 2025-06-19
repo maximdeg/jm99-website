@@ -8,7 +8,7 @@ interface RepairSplitSectionProps {
   rightImage: string;
 }
 
-const RepairSplitSection: React.FC<RepairSplitSectionProps> = ({ leftImage, rightImage }) => {
+const RepairSplitSection: React.FC<RepairSplitSectionProps> = () => {
   return (
     <section className={styles.splitSection}>
       <div 
