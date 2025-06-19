@@ -1,6 +1,8 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Popover,
   PopoverContent,
@@ -17,9 +19,30 @@ import {
 } from "@/components/NavigationMenu";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    // Add event listener for all browsers
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      
+      // Cleanup function
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
+
   return (
     <header
-      className="w-full z-10 sticky top-[-20px] md:top-[-35px] md:pt-5 h-27 md:h-35 md:px-[calc(8%+1.5rem)] "
+      className={`w-full z-10 sticky top-[-20px] md:top-[-35px] md:pt-5 h-27 md:h-35 md:px-[calc(8%+1.5rem)] transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+      }`}
       id="header"
     >
       <div className="w-full flex items-center justify-between px-5">

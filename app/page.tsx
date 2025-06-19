@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import HeroMain from "@/components/HeroMain";
 import Services from "@/components/Services";
 import Head from "next/head";
+import RepairSplitSection from "@/components/RepairSplitSection";
 
 export default function Home() {
   return (
@@ -23,6 +24,10 @@ export default function Home() {
         <section className="pt-6 md:pt-10 items-center">
           <HeroMain />
           <Services />
+          <RepairSplitSection
+            leftImage="/window.svg"
+            rightImage="/file.svg"
+          />
           <EmailForm />
           <Footer />
         </section>
