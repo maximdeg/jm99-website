@@ -9,6 +9,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "./ui/button";
+import { ShoppingCart } from "lucide-react";
+import Cart from "./Cart";
 
 import {
   NavigationMenu,
@@ -101,6 +103,18 @@ const Header = () => {
                     </Link>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
+                    <Link href="/tienda" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <div className="flex items-center gap-2">
+                          <ShoppingCart className="h-4 w-4" />
+                          Tienda
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
                     <Link href="#contact" legacyBehavior passHref>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
@@ -115,7 +129,7 @@ const Header = () => {
           </Popover>
         </div>
 
-        <div className="w-1/8 justify-end content-center hidden md:flex">
+        <div className="w-1/8 justify-end content-center hidden md:flex items-center gap-4">
           <NavigationMenu data-orientation="vertical">
             <NavigationMenuList data-orientation="vertical">
               <NavigationMenuItem>
@@ -133,6 +147,16 @@ const Header = () => {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
+                <Link href="/tienda" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <div className="flex items-center gap-2">
+                      <ShoppingCart className="h-4 w-4" />
+                      Tienda
+                    </div>
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="#contact" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Contacto
@@ -141,6 +165,9 @@ const Header = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+          
+          <Cart />
+          
           <Link
             className="inline-block text-[#350D70] no-underline hover:text-pink-500 hover:text-underline text-center md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
             href="https://www.tiktok.com/@jm99computers"
